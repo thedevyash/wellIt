@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.WELLIT">
+package="com.example.wellit">
 
     <application
         android:label="wellit"
@@ -31,5 +31,7 @@ package="com.WELLIT">
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyA9KfKuHbupMTcmnkaPIyadiBuV6MxuSDY"/>
     </application>
 </manifest>

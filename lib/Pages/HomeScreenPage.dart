@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wellit/Pages/ViaMap.dart';
 
 class HomeScreenPage extends StatefulWidget {
   const HomeScreenPage({super.key});
@@ -29,7 +30,10 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
           ButtonTheme(
             height: 30,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => ViaMap()));
+                },
                 child: Text(
                   "Via Maps",
                   style: GoogleFonts.poppins(
