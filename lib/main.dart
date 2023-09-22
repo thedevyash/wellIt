@@ -2,8 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:wellit/Onboarding/OnboardingScreen.dart';
-import 'package:wellit/Pages/HomePage.dart';
-import 'package:wellit/chatbot/chat_body.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
