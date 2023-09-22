@@ -15,7 +15,7 @@ class _ViaStateState extends State<ViaState> {
         child: Container(
           child: Column(children: [
             Row(
-              children: [DropdownButton(items: items, onChanged: onChanged)],
+              children: [DropdownButton(items: [], onChanged: onChanged)],
             )
           ]),
         ),
