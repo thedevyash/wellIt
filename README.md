@@ -1,4 +1,4 @@
-# wellit
+# wellIt
 
 A new Flutter project.
 
