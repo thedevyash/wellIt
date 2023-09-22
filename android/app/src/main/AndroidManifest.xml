@@ -1,4 +1,6 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.WELLIT">
+
     <application
         android:label="wellit"
         android:name="${applicationName}"

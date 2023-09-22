@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:wellit/chatbot/model/model.dart';
 import 'package:wellit/utils/colors.dart';
 
@@ -23,12 +24,9 @@ class ChatMessageWidget extends StatelessWidget {
           chatMessageType == ChatMessageType.bot
               ? Container(
                   margin: const EdgeInsets.only(right: 16.0),
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Image(
-                          alignment: Alignment.center,
-                          fit: BoxFit.fill,
-                          image: AssetImage("assets/images/chatbot.png"))),
+                      child: SvgPicture.asset("assets/images/Chatbot.svg")),
                 )
               : Container(
                   margin: const EdgeInsets.only(right: 16.0),
