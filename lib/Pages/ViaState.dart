@@ -3,7 +3,6 @@ import 'package:flutter_dropdown/flutter_dropdown.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wellit/Pages/HomePage.dart';
 import 'package:wellit/Pages/HomeScreenPage.dart';
-import 'package:wellit/Pages/Result.dart';
 import 'package:wellit/utils/constant.dart';
 
 class ViaState extends StatefulWidget {
@@ -158,10 +157,8 @@ class ViaStateState extends State<ViaState> {
                   ),
                   TextButton(
                       onPressed: () {
-                        if (selectedState != null && selectedDistrict != null) {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Result()));
-                        }
+                        if (selectedState != null &&
+                            selectedDistrict != null) {}
                       },
                       style: TextButton.styleFrom(
                           backgroundColor: Color.fromRGBO(0, 46, 110, 1),

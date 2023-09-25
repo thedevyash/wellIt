@@ -49,6 +49,7 @@ dependencies:
   http: ^0.13.3
   google_maps_flutter: ^2.2.1
   location: ^5.0.3
+  flutter_dropdown: ^1.0.1+hotfix.1
 
   
 
