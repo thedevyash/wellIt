@@ -5,6 +5,7 @@ import 'package:wellit/Pages/HomePage.dart';
 
 class AuthServices {
   FirebaseAuth auth = FirebaseAuth.instance;
+
   registerUser(email, password, context) async {
     try {
       await auth

@@ -1,16 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
 
 class AnimatedBtn extends StatelessWidget {
   const AnimatedBtn({
     Key? key,
-    required RiveAnimationController btnAnimationController,
     required this.press,
-  })  : _btnAnimationController = btnAnimationController,
-        super(key: key);
+  }) : super(key: key);
 
-  final RiveAnimationController _btnAnimationController;
   final VoidCallback press;
 
   @override
@@ -18,14 +16,10 @@ class AnimatedBtn extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: SizedBox(
-        height: 64,
-        width: 236,
+        height: 90,
+        width: 300,
         child: Stack(
           children: [
-            RiveAnimation.asset(
-              "assets/rive/button.riv",
-              controllers: [_btnAnimationController],
-            ),
             Positioned.fill(
               top: 8,
               child: Row(
@@ -36,7 +30,8 @@ class AnimatedBtn extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     "Let's Start",
-                    style: Theme.of(context).textTheme.button,
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold, fontSize: 18),
                   )
                 ],
               ),

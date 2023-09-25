@@ -10,7 +10,7 @@ class PostCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 380,
+        height: 320,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -42,7 +42,7 @@ class PostCard extends StatelessWidget {
                       Text(
                         "Ministry Of Jal Shakti",
                         style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w500, fontSize: 18),
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                     ],
                   ),
@@ -78,11 +78,13 @@ class PostCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Ministry of Jal Shakti",
-                        style: TextStyle(color: Colors.black)),
-                    const Text(
-                      "Lorem Ipsum",
-                      style: TextStyle(color: Colors.black),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "Jal Jeevan Mission (JJM)",
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500, fontSize: 18),
                     ),
                   ],
                 ),

@@ -37,7 +37,11 @@ class _Gradient_ButtonState extends State<Gradient_Button> {
             shadowColor: Colors.transparent),
         child: widget.showloading
             ? SizedBox(
-                height: 13, width: 13, child: CircularProgressIndicator())
+                height: 13,
+                width: 13,
+                child: CircularProgressIndicator(
+                  color: Color.fromRGBO(0, 185, 241, 1),
+                ))
             : Text(
                 widget.label,
                 style: GoogleFonts.poppins(

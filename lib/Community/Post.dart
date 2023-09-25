@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 final description =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non odio euismod lacinia at. Tortor aliquam nulla facilisi cras fermentum odio eu. Ut tortor pretium viverra suspendisse potenti nullam. Massa enim nec dui nunc mattis enim ut tellus. In tellus integer feugiat scelerisque varius morbi enim nunc. Quis lectus nulla at volutpat diam ut venenatis tellus. Dolor magna eget est lorem ipsum dolor sit amet. Pellentesque id nibh tortor id. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Et netus et malesuada fames ac turpis egestas. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Tellus at urna condimentum mattis. Maecenas accumsan lacus vel facilisis volutpat. Nulla posuere sollicitudin aliquam ultrices sagittis orci. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Natoque penatibus et magnis dis parturient.";
+    "Jal Jeevan Mission (JJM)\ni.Development of in-village piped water supplyinfrastructure toprovide tap-water connection to every rural household\nii. Development of reliable drinking water sources and or augmentation ofexisting sources to provide long-term sustainability of water supply system\niii. Wherever necessary, bulk water transfer, treatment plants and distributionnetwork to cater to every rural household";
 
 class Post extends StatefulWidget {
   const Post({super.key});
@@ -17,7 +18,19 @@ class _PostState extends State<Post> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-            backgroundColor: Colors.white, foregroundColor: Colors.white),
+            centerTitle: true,
+            title: Text("Connect",
+                style: GoogleFonts.poppins(
+                    color: Colors.black,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold)),
+            leading: IconButton(
+              color: Colors.black,
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.white),
         body: Container(
           padding: const EdgeInsets.all(12),
           width: MediaQuery.of(context).size.width,
@@ -41,15 +54,13 @@ class _PostState extends State<Post> {
                   const SizedBox(
                     width: 20,
                   ),
-                  const Column(
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
                         "Ministry Of Jal Shakti",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400),
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                     ],
                   ),
@@ -119,7 +130,8 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
           : Column(
               children: <Widget>[
                 Text(flag ? (firstHalf + "...") : (firstHalf + secondHalf),
-                    style: const TextStyle(color: Colors.black)),
+                    style:
+                        GoogleFonts.poppins(color: Colors.black, fontSize: 16)),
                 InkWell(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,

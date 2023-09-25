@@ -14,16 +14,10 @@ class OnbordingScreen extends StatefulWidget {
 }
 
 class _OnbordingScreenState extends State<OnbordingScreen> {
-  late RiveAnimationController _btnAnimationController;
-
   bool isShowSignInDialog = false;
 
   @override
   void initState() {
-    _btnAnimationController = OneShotAnimation(
-      "active",
-      autoplay: false,
-    );
     super.initState();
   }
 
@@ -66,6 +60,9 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
                     CircleAvatar(
                         backgroundColor: Colors.transparent,
                         radius: 60,
@@ -74,29 +71,27 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
                             alignment: Alignment.center,
                             'assets/images/logo.png')),
                     SizedBox(
-                      width: 260,
+                      width: 280,
                       child: Column(
                         children: [
-                          Text("Well IT",
+                          Text("Well It",
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                  fontSize: 56, fontWeight: FontWeight.bold)),
+                                  fontSize: 52, fontWeight: FontWeight.bold)),
                           SizedBox(height: 16),
                           Text(
-                            "abba jabba dabba",
+                            textAlign: TextAlign.center,
+                            "Use this tool to predict wheather construction of well is possible or not in your location.",
+                            style: GoogleFonts.poppins(fontSize: 16),
                           ),
                         ],
                       ),
                     ),
                     const Spacer(flex: 2),
                     AnimatedBtn(
-                      btnAnimationController: _btnAnimationController,
                       press: () {
-                        _btnAnimationController.isActive = true;
-
-                        Future.delayed(const Duration(milliseconds: 800), () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Loginscreen()));
-                        });
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Loginscreen()));
                       },
                     ),
                     SizedBox(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wellit/Onboarding/OnbComponents/login.dart';
 import 'package:wellit/Onboarding/OnbComponents/login_field.dart';
 import 'package:wellit/Onboarding/controllers/controller.dart';
+import 'package:wellit/Pages/splash.dart';
 import 'package:wellit/buttons/gradientButton.dart';
 import 'package:wellit/buttons/social_button.dart';
 import 'package:wellit/services/auth.dart';
@@ -15,18 +17,15 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  void dispose() {
-    Controller.usernamecontroller.dispose();
-    Controller.passwordcontroller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
         children: [
+          SizedBox(
+            height: 28,
+          ),
           CircleAvatar(
               backgroundColor: Colors.transparent,
               radius: 60,
@@ -95,6 +94,8 @@ class _SignupState extends State<Signup> {
                     Controller.usernamecontroller.text,
                     Controller.passwordcontroller.text,
                     context);
+                var sharedPref = await SharedPreferences.getInstance();
+                sharedPref.setBool(SplashScreenState.KEYLOGIN, true);
                 setState(() {
                   widget.showloading = false;
                 });

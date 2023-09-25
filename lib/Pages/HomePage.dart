@@ -1,7 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wellit/Onboarding/OnboardingScreen.dart';
+import 'package:wellit/Onboarding/controllers/controller.dart';
 import 'package:wellit/Pages/PagesList.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wellit/Pages/splash.dart';
 
 class HomePage extends StatefulWidget {
   final name;
@@ -33,8 +38,37 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 200,
               ),
-              Text("Version 1.0.0"),
-              TextButton(onPressed: () {}, child: Text("Github")),
+              Text(
+                "Version 1.0.0",
+                style: GoogleFonts.poppins(
+                    fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Github",
+                    style: GoogleFonts.poppins(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  )),
+              TextButton(
+                  onPressed: () async {
+                    await FirebaseAuth.instance.signOut().then((value) async {
+                      Controller.usernamecontroller.clear();
+                      Controller.passwordcontroller.clear();
+                      var sharedPref = await SharedPreferences.getInstance();
+                      sharedPref.setBool(SplashScreenState.KEYLOGIN, false);
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => OnbordingScreen()));
+                    });
+                  },
+                  child: Text(
+                    "LogOut",
+                    style: GoogleFonts.poppins(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ))
             ],
           ),
         ),
@@ -55,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             "Well It !",
             style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
           )),
-      body: pages.elementAt(selectedindex),
+      body: Container(child: pages.elementAt(selectedindex)),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.black,
         selectedItemColor: Colors.blue,
@@ -68,7 +102,7 @@ class _HomePageState extends State<HomePage> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.people_alt_rounded), label: "Community"),
+              icon: Icon(Icons.people_alt_rounded), label: "Connect"),
           BottomNavigationBarItem(
               activeIcon: SvgPicture.asset("assets/images/Chatbot.svg",
                   color: Colors.blue),

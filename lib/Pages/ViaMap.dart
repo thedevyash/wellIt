@@ -117,14 +117,28 @@ class _ViaMapState extends State<ViaMap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoogleMap(
-          onMapCreated: (GoogleMapController) {},
-          mapType: MapType.terrain,
-          initialCameraPosition:
-              CameraPosition(target: sourceLocation, zoom: 13.5),
-          markers: {
-            Marker(markerId: MarkerId("source"), position: sourceLocation),
-          }),
+      body: Stack(alignment: Alignment.center, children: [
+        Column(children: [
+          SizedBox(
+            width: 100,
+            height: 100,
+            child: Card(
+              child: Text("Current Location"),
+            ),
+          )
+        ]),
+        GoogleMap(
+            mapToolbarEnabled: true,
+            onMapCreated: (GoogleMapController) {},
+            mapType: MapType.terrain,
+            myLocationEnabled: true,
+            myLocationButtonEnabled: true,
+            initialCameraPosition:
+                CameraPosition(target: sourceLocation, zoom: 13.5),
+            markers: {
+              Marker(markerId: MarkerId("source"), position: sourceLocation),
+            }),
+      ]),
     );
   }
 }

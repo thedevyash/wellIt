@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wellit/chatbot/model/model.dart';
 import 'package:wellit/chatbot/network/chat_repository.dart';
-import '../utils/colors.dart';
 import 'chat_message.dart';
 
 class ChatPage extends StatefulWidget {

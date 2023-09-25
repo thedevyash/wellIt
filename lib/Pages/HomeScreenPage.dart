@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wellit/Pages/ViaMap.dart';
+import 'package:wellit/Pages/ViaState.dart';
 
 class HomeScreenPage extends StatefulWidget {
   const HomeScreenPage({super.key});
@@ -54,7 +55,10 @@ class _HomeScreenPageState extends State<HomeScreenPage> {
           ButtonTheme(
             height: 30,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ViaState()));
+                },
                 style: TextButton.styleFrom(
                   fixedSize: Size.fromWidth(300),
                   backgroundColor: Color.fromRGBO(0, 46, 110, 1),
